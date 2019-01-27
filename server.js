@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 3000;
 var app = express();
 //middle ware how your express application works, third party on, customization
 //__dirname path to root of project
@@ -59,8 +60,8 @@ app.get('/bad', (req,res)=>{
 		Status: "Bad Error"
 	})
 });
-app.listen(3000, () =>{
+app.listen(port, () =>{
 
-	console.log('Starting Server');
+	console.log(`Server is up on port ${port}`);
 
 });											//bind to a port
